@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Duality Headspace | Head Spa & Facials, Austin TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060907;--bg2:#0c1510;--sage:#a9dcb8;--sage2:#6fb98a;--gold:#d8b45a;--gold2:#f3dc9a;--ink:#eaf3ec;--mute:#9fb3a5;--glass:rgba(169,220,184,.07);--line:rgba(216,180,90,.28);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:radial-gradient(1200px 700px at 80% -10%,#16301f 0,transparent 60%),radial-gradient(900px 600px at -10% 40%,#1a2a14 0,transparent 55%),var(--bg);color:var(--ink);font:300 16px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.05}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;background:rgba(6,9,7,.55);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.04em;color:var(--gold2)}
+nav ul{display:flex;gap:28px;list-style:none;padding:0}
+nav a.l{font-size:.85rem;color:var(--mute);transition:color .2s}nav a.l:hover{color:var(--gold2)}
+.btn{display:inline-block;padding:13px 28px;border-radius:40px;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#a8832d);color:#10170f;font-weight:600;font-size:.9rem;box-shadow:0 10px 30px -8px rgba(216,180,90,.55);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px -8px rgba(216,180,90,.7)}
+.btn.ghost{background:var(--glass);color:var(--gold2);border:1px solid var(--line);box-shadow:none;backdrop-filter:blur(8px)}
+section{padding:110px 6vw;position:relative}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:4vw;padding-top:130px}
+.hero h1{font-size:clamp(3rem,7vw,6.2rem);background:linear-gradient(120deg,var(--sage) 10%,var(--gold2) 60%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:46ch;color:var(--mute);margin:26px 0 36px;font-size:1.05rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.status{display:inline-flex;gap:10px;align-items:center;padding:7px 16px;border:1px solid var(--line);border-radius:30px;background:var(--glass);font-size:.8rem;color:var(--sage);margin-bottom:24px}
+.status i{width:8px;height:8px;border-radius:50%;background:#e66;box-shadow:0 0 10px #e66}.status.open i{background:#6f6;box-shadow:0 0 10px #6f6}
+.stage{perspective:1100px;height:min(78vw,520px);display:grid;place-items:center}
+.gem{position:relative;width:min(60vw,340px);aspect-ratio:1;transform-style:preserve-3d;transition:transform .15s ease-out;animation:spin 22s linear infinite}
+.gem:hover{animation-play-state:paused}
+.gem .f{position:absolute;inset:0;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);border:0}
+.f:nth-child(1){background:linear-gradient(135deg,rgba(169,220,184,.35),rgba(169,220,184,.04));transform:translateZ(90px)}
+.f:nth-child(2){background:linear-gradient(135deg,rgba(216,180,90,.5),rgba(216,180,90,.05));transform:translateZ(30px) scale(.8)}
+.f:nth-child(3){background:linear-gradient(135deg,rgba(243,220,154,.45),rgba(111,185,138,.08));transform:translateZ(-30px) scale(.6)}
+.f:nth-child(4){background:linear-gradient(135deg,rgba(169,220,184,.3),rgba(6,9,7,.2));transform:translateZ(-90px) scale(.4)}
+.f:nth-child(5){background:rgba(216,180,90,.12);transform:translateZ(-150px) scale(1.1)}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);animation:fl 7s ease-in-out infinite}
+.o1{width:70px;height:70px;background:radial-gradient(circle at 30% 30%,var(--gold2),var(--gold) 60%,#5c4510);top:6%;right:8%}
+.o2{width:44px;height:44px;background:radial-gradient(circle at 30% 30%,#e6fff0,var(--sage2) 70%);bottom:10%;left:6%;animation-delay:-3s}
+@keyframes spin{to{transform:rotateX(var(--rx,14deg)) rotateY(360deg)}}
+@keyframes fl{50%{transform:translateY(-22px)}}
+h2{font-size:clamp(2.2rem,4.6vw,3.8rem);color:var(--gold2);margin-bottom:14px}
+.sub{color:var(--mute);max-width:56ch;margin-bottom:50px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.tab{padding:10px 22px;border-radius:30px;border:1px solid var(--line);background:var(--glass);color:var(--mute);cursor:pointer;font:inherit;font-size:.88rem;backdrop-filter:blur(8px)}
+.tab[aria-selected=true]{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#10170f;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:26px;perspective:1000px}
+.card{padding:30px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(169,220,184,.1),rgba(6,9,7,.35));backdrop-filter:blur(12px);transform-style:preserve-3d;transition:transform .2s ease-out,border-color .3s;position:relative;overflow:hidden}
+.card:hover{border-color:var(--gold)}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(243,220,154,.16),transparent 60%);pointer-events:none}
+.card h3{font-size:1.7rem;color:var(--sage);transform:translateZ(30px)}
+.card p{color:var(--mute);font-size:.9rem;margin:10px 0 22px}
+.meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:16px;transform:translateZ(20px)}
+.price{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold2)}
+.dur{font-size:.8rem;color:var(--mute)}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+.pro{text-align:center;padding:40px 20px;border-radius:26px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);transition:transform .3s}
+.pro:hover{transform:translateY(-10px) rotateX(4deg)}
+.av{width:96px;height:96px;margin:0 auto 20px;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:#10170f;background:linear-gradient(135deg,var(--gold2),var(--sage2));clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)}
+.pro h3{font-size:1.6rem}.pro span{color:var(--mute);font-size:.82rem;display:block;margin:4px 0 18px}
+.visit{display:grid;grid-template-columns:1fr 1.4fr;gap:34px;align-items:stretch}
+.info{padding:36px;border-radius:26px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(12px)}
+.info div{margin:0 0 20px}.info b{display:block;color:var(--gold);font-weight:600;font-size:.82rem;margin-bottom:2px}
+.info a:hover{color:var(--gold2)}
+.mapbox{border-radius:26px;overflow:hidden;border:1px solid var(--gold);min-height:430px;position:relative;box-shadow:0 30px 70px -30px rgba(216,180,90,.4);background:var(--bg2)}
+.mapbox iframe{width:100%;height:100%;min-height:430px;border:0;filter:invert(.92) hue-rotate(110deg) saturate(.7) brightness(.95)}
+.mapbox .open{position:absolute;right:14px;bottom:14px}
+footer{text-align:center;padding:60px 6vw 50px;border-top:1px solid var(--line);color:var(--mute);font-size:.85rem}
+footer .brand{display:block;margin-bottom:8px}
+.gift{margin-top:60px;padding:40px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(216,180,90,.14),rgba(169,220,184,.08));backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.gift h3{font-size:2rem;color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+@media(max-width:860px){.hero,.visit{grid-template-columns:1fr}nav ul{display:none}section{padding:80px 6vw}.stage{order:-1;height:340px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav><a class="brand" href="#top">Duality Headspace</a>
+<ul><li><a class="l" href="#services">Services</a></li><li><a class="l" href="#team">Our team</a></li><li><a class="l" href="#visit">Find us</a></li></ul>
+<a class="btn" href="tel:+17378810260">Book now</a></nav>
+
+<section class="hero" id="top">
+<div>
+<div class="status" id="st"><i></i><span id="stt">Austin, TX</span></div>
+<h1>Where scalp, skin and stillness meet.</h1>
+<p>Duality Headspace is a head spa and skin studio in North Austin. Cleansing scalp rituals, custom facials and deep relaxation, all in one calm room.</p>
+<div class="cta"><a class="btn" href="tel:+17378810260">Book an appointment</a><a class="btn ghost" href="#services">See services</a></div>
+</div>
+<div class="stage" id="stage"><div class="gem" id="gem"><div class="f"></div><div class="f"></div><div class="f"></div><div class="f"></div><div class="f"></div><div class="orb o1"></div><div class="orb o2"></div></div></div>
+</section>
+
+<section id="services">
+<h2>Services</h2>
+<p class="sub">Choose a head spa ritual or a custom facial. Prices are per session.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid" id="grid"></div>
+<p class="sub" style="margin:36px 0 0">Also available: add-ons, consultations, hair removal and body treatments. Call or email for details.</p>
+<div class="gift"><div><h3>Give the gift of calm</h3><p style="color:var(--mute)">Buy a gift card for your next visit, or for a friend.</p></div><a class="btn" href="mailto:dualitysaloninfo@gmail.com?subject=Gift%20card">Ask about gift cards</a></div>
+</section>
+
+<section id="team">
+<h2>Our team</h2>
+<p class="sub">Book with the specialist you prefer.</p>
+<div class="team" id="teamgrid"></div>
+</section>
+
+<section id="visit">
+<h2>Find us</h2>
+<p class="sub">See our live location on the map and get directions.</p>
+<div class="visit">
+<div class="info">
+<div><b>Address</b>13130 Pond Springs Rd Apt 1102<br>Austin, TX 78729-7194</div>
+<div><b>Phone</b><a href="tel:+17378810260">(737) 881-0260</a></div>
+<div><b>Email</b><a href="mailto:dualitysaloninfo@gmail.com">dualitysaloninfo@gmail.com</a></div>
+<div><b>Website</b><a href="https://www.dualitysalon.com" target="_blank" rel="noopener">www.dualitysalon.com</a></div>
+<div><b>Instagram</b><a href="https://instagram.com/dualityheadspace" target="_blank" rel="noopener">@dualityheadspace</a></div>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=13130+Pond+Springs+Rd+Apt+1102+Austin+TX+78729" target="_blank" rel="noopener">Get directions</a>
+</div>
+<div class="mapbox"><iframe title="Duality Headspace on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=13130+Pond+Springs+Rd+Apt+1102+Austin+TX+78729&z=15&output=embed"></iframe>
+<a class="btn ghost open" style="background:rgba(6,9,7,.8)" href="https://www.google.com/maps/search/?api=1&query=13130+Pond+Springs+Rd+Apt+1102+Austin+TX+78729" target="_blank" rel="noopener">Open in Google Maps</a></div>
+</div>
+</section>
+
+<footer><span class="brand">Duality Headspace</span>13130 Pond Springs Rd, Austin, TX · (737) 881-0260<br>© 2026 Duality Headspace</footer>
+
+<script>
+const S={"Head spa":[["The Essential Headspace","An immersive scalp, skin and body treatment designed to cleanse and restore.","$145","1 hour"],["The Signature Headspace","Our signature scalp, face and body wellness experience.","$175","1 hour 30 minutes"],["The Complete Headspace Experience","Our most complete scalp, skin and body wellness experience.","$275","2 hours 30 minutes"],["Seasonal Head Spa (fall)","Fall pumpkin head spa. Treat your scalp, hair and skin to a seasonal reset.","$160","1 hour 30 minutes"]],
+"Facials":[["The Signature Headspace Facial","Skincare that goes beyond the surface, fully customized to your skin.","$115","1 hour"],["The Renewal Facial","Restore balance and reveal a radiant complexion with deep hydration.","$140","1 hour 30 minutes"],["The Restore Facial","A results-driven facial to support firmness and healthy, radiant skin.","$160","2 hours"]]};
+const T=["Alyssa Vauk","Catherine Sanchez","Lyndsey Kincer","Shila Bruce"];
+const tabs=document.getElementById('tabs'),grid=document.getElementById('grid');
+function show(k){[...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===k));
+grid.innerHTML=S[k].map(s=>`<div class="card"><h3>${s[0]}</h3><p>${s[1]}</p><div class="meta"><span class="price">${s[2]}</span><span class="dur">${s[3]}</span></div></div>`).join('')+`<a class="card" href="tel:+17378810260" style="display:grid;place-items:center;text-align:center"><h3 style="color:var(--gold2)">Book by phone</h3><p>(737) 881-0260</p></a>`;
+grid.querySelectorAll('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.transform=`rotateY(${(x-.5)*12}deg) rotateX(${(.5-y)*12}deg)`;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')});c.addEventListener('mouseleave',()=>c.style.transform='')})}
+Object.keys(S).forEach(k=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=k;b.onclick=()=>show(k);tabs.appendChild(b)});
+show('Head spa');
+document.getElementById('teamgrid').innerHTML=T.map(n=>`<div class="pro"><div class="av">${n[0]}</div><h3>${n}</h3><span>Specialist</span><a class="btn ghost" href="tel:+17378810260">Book with ${n.split(' ')[0]}</a></div>`).join('');
+const stage=document.getElementById('stage'),gem=document.getElementById('gem');
+stage.addEventListener('mousemove',e=>{const r=stage.getBoundingClientRect();gem.style.setProperty('--rx',((.5-(e.clientY-r.top)/r.height)*40)+'deg')});
+(function(){const d=new Date();const h=d.getDay();const st=document.getElementById('st');document.getElementById('stt').textContent=h===0?'Closed today · Austin, TX':'Austin, TX · Head spa & facials';if(h!==0)st.classList.add('open')})();
+</script>
+</body>
+</html>
